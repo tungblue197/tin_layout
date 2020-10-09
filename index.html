@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./tin.style.css" />
+    <title>HCM Tin tức | Thị trường | Nhà nước | Pháp luật</title>
+  </head>
+  <body>
+    <div class="tin-container">
+      <div class="tin">
+        <div class="tin__title">
+          <h3 class="title">
+            Vụ bé gái bị bố dùng cần câu đánh vì đi ăn cháo với mẹ: Trần tình
+            của người bố
+          </h3>
+        </div>
+        <div class="tin__mota">
+          <div class="mota">
+            Liên quan đến sự việc bé gái bị bố dùng cần câu đánh, doạ xích chân
+            lại vì đi ăn cháo với mẹ, chia sẻ với PV, anh N.Đ.K. (SN 1981, ở
+            Hoài Đức, Hà Nội, bố cháu bé), cho biết, sự việc này đã xảy ra cách
+            đây 1 tuần, anh là người quay clip bạo hành con rồi gửi cho vợ cũ.
+            Anh K. thừa nhận đã quát mắng, doạ nạt con gái.
+          </div>
+        </div>
+        <div class="tin__content">
+          <div class="content">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+        <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script>
+        const titleElement = $('.tin-container .tin .tin__title .title');
+        const motaElement = $('.tin-container .tin .tin__mota .mota');
+        const contentElement = $('.tin-container .tin .tin__content .content');
+
+        console.log(titleElement, motaElement, contentElement);
+        $.ajax({
+            url: '',
+            params: {
+                id: ''
+            }
+        }).done(res => {
+            if(res) {
+                const { data } = res;
+                titleElement.html(data.Summary);
+                motaElement.html(data.MoTa);
+                contentElement.html(data.Content);
+            }
+        })
+    </script>
+  </body>
+</html>
